@@ -29,7 +29,10 @@ APT_PACKAGES=(
 )
 
 PIP_PACKAGES=(
-    #"package-1"
+    "opencv-python"
+    "pillow"
+    "insightface"
+    "onnxruntime-gpu"
     #"package-2"
 )
 
