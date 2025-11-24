@@ -1,25 +1,8 @@
 #!/bin/bash
 
 source /venv/main/bin/activate
-
-# ComfyUI Repository Configuration
-COMFYUI_REPO="${COMFYUI_REPO:-https://github.com/Stiryourmind/ComfyUI-v0.3.59-for-AI-booth.git}"
-COMFYUI_BRANCH="${COMFYUI_BRANCH:-main}"
 COMFYUI_DIR=${WORKSPACE}/ComfyUI
 
-# Clone your specific ComfyUI version if it doesn't exist
-if [[ ! -d "$COMFYUI_DIR" ]]; then
-    printf "📦 Cloning ComfyUI from %s (branch: %s)...\n" "$COMFYUI_REPO" "$COMFYUI_BRANCH"
-    git clone --branch "$COMFYUI_BRANCH" "$COMFYUI_REPO" "$COMFYUI_DIR"
-    printf "✅ ComfyUI cloned successfully!\n\n"
-else
-    printf "✅ ComfyUI directory already exists, skipping clone...\n\n"
-    if [[ ${AUTO_UPDATE,,} != "false" ]]; then
-        printf "🔄 Updating ComfyUI...\n"
-        cd "$COMFYUI_DIR" && git pull
-        printf "✅ ComfyUI updated!\n\n"
-    fi
-fi
 
 # Packages are installed after nodes so we can fix them...
 
@@ -29,30 +12,11 @@ APT_PACKAGES=(
 )
 
 PIP_PACKAGES=(
-    "opencv-python"
-    "pillow"
-    "insightface"
-    "onnxruntime-gpu"
     #"package-2"
 )
 
 NODES=(
-    "https://github.com/ltdrdata/ComfyUI-Manager"
-    "https://github.com/cubiq/ComfyUI_essentials"
     "https://github.com/Acly/comfyui-tooling-nodes"
-    "https://github.com/ltdrdata/ComfyUI-Manager.git"
-    "https://github.com/cubiq/ComfyUI_essentials.git"
-    "https://github.com/crystian/ComfyUI-Crystools.git"
-    "https://github.com/rgthree/rgthree-comfy.git"
-    "https://github.com/kijai/ComfyUI-KJNodes.git"
-    "https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git"
-    "https://github.com/chflame163/ComfyUI_LayerStyle.git"
-    "https://github.com/yolain/ComfyUI-Easy-Use.git"
-    "https://github.com/kaibioinfo/ComfyUI_AdvancedRefluxControl.git"
-    "https://github.com/ltdrdata/ComfyUI-Impact-Pack.git"
-    "https://github.com/kijai/ComfyUI-Florence2.git"
-    "https://github.com/sipherxyz/comfyui-art-venture.git"
-    "https://github.com/lldacing/ComfyUI_PuLID_Flux_ll.git"
 )
 
 WORKFLOWS=(
