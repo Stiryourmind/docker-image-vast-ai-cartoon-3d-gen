@@ -22,13 +22,13 @@ NODES=(
     "https://github.com/rgthree/rgthree-comfy"
     "https://github.com/kijai/ComfyUI-KJNodes"
     "https://github.com/ssitu/ComfyUI_UltimateSDUpscale"
-    "https://github.com/chflame163/ComfyUI_LayerStyle"
     "https://github.com/yolain/ComfyUI-Easy-Use"
     "https://github.com/kaibioinfo/ComfyUI_AdvancedRefluxControl"
     "https://github.com/ltdrdata/ComfyUI-Impact-Pac"
     "https://github.com/kijai/ComfyUI-Florence2"
     "https://github.com/sipherxyz/comfyui-art-venture"
     "https://github.com/lldacing/ComfyUI_PuLID_Flux_ll"
+    "https://github.com/chflame163/ComfyUI_LayerStyle"
     
 )
 
